@@ -129,12 +129,29 @@ export default function ResumePage() {
           RESUME
         </div>
         <div style={{ fontFamily: 'monospace', fontSize: 11, color: 'rgba(255,255,255,0.3)', letterSpacing: 3, marginBottom: 28 }}>
-          BHARATH K. PILLAI — OSU CS&E 2028
+          BHARATH K. PILLAI — OSU CS&E 2027
         </div>
 
         <div className="section-head">EXPERIENCE</div>
         <div className="divider" />
         {experience.map((e, i) => <Block key={i} item={e} />)}
+
+        <div className="section-head">PUBLICATIONS</div>
+        <div className="divider" />
+        <div style={{ marginBottom: 28 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 4 }}>
+            <span style={{ fontFamily: "'Anton', sans-serif", fontStyle: 'italic', fontSize: 16, color: '#fff', letterSpacing: 1 }}>
+              SmartWilds: Multimodal Wildlife Monitoring Dataset
+            </span>
+            <span style={{ fontFamily: 'monospace', fontSize: 11, color: '#c4001a', letterSpacing: 2 }}>Sep 2025</span>
+          </div>
+          <div style={{ fontFamily: 'monospace', fontSize: 12, color: '#3ce2ff', letterSpacing: 1, marginBottom: 8 }}>
+            NeurIPS 2025 — Imageomics Workshop
+          </div>
+          <div style={{ fontFamily: 'monospace', fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, letterSpacing: 0.5 }}>
+            Co-author on a peer-reviewed multimodal wildlife monitoring dataset integrating drone imagery, camera traps, and bioacoustics. Supports conservation computer vision, species detection, and habitat monitoring research.
+          </div>
+        </div>
 
         <div className="section-head">PROJECTS</div>
         <div className="divider" />

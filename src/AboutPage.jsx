@@ -71,8 +71,11 @@ export default function AboutPage() {
           <div style={{ marginTop: 16, fontFamily: 'monospace', fontSize: 13, color: 'rgba(255,255,255,0.5)', letterSpacing: 2 }}>
             B.S. COMPUTER SCIENCE & ENGINEERING — THE OHIO STATE UNIVERSITY
           </div>
+          <div style={{ fontFamily: 'monospace', fontSize: 12, color: '#3ce2ff', letterSpacing: 2, marginTop: 4 }}>
+            MINOR: ROBOTICS AND AUTONOMOUS SYSTEMS
+          </div>
           <div style={{ fontFamily: 'monospace', fontSize: 12, color: 'rgba(255,255,255,0.3)', letterSpacing: 2, marginTop: 4 }}>
-            EXPECTED GRADUATION: MAY 2028
+            EXPECTED GRADUATION: DEC 2027
           </div>
         </div>
 
