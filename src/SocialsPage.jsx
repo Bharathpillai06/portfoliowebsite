@@ -77,9 +77,6 @@ export default function SocialsPage() {
           </a>
         ))}
 
-        <div style={{ marginTop: 32, fontFamily: 'monospace', fontSize: 11, color: 'rgba(255,255,255,0.2)', letterSpacing: 2 }}>
-          YOUTUBE: BORATHOLOS CODING — 4,000+ MONTHLY VIEWS
-        </div>
       </div>
     </div>
   )
