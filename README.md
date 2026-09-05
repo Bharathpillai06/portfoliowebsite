@@ -1,16 +1,20 @@
-# React + Vite
+# bharathpillai.dev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio. React 19 + Vite + framer-motion, styled after a video-game main menu.
 
-Currently, two official plugins are available:
+```
+npm i
+npm run dev      # local
+npm run build    # dist/
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Phones and tablets get a plain scrolling portfolio (`src/MobileHome.jsx`); laptops get the game-style menu (`src/P3Menu.jsx`). The switch is `src/hooks/useIsMobile.js`.
 
-## React Compiler
+## Layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/P3Menu.jsx` – the animated main menu (keyboard + touch)
+- `src/components/Shell.jsx` – frame shared by every content page (header, desktop nav, mobile tab bar)
+- `src/components/SlashButton.jsx` – the cut-corner button with the sweep animation
+- `src/components/Decor.jsx` – halftone/slash backdrop, chips, monogram, icons
+- `src/data/content.js` – all copy in one place; edit this to update the site
+- `src/index.css` – design tokens and shared styles

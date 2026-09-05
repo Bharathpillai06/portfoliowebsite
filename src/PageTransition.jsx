@@ -1,46 +1,28 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { motion } from 'framer-motion'
 
-const blocks = ["#0d1a3a", "#1a6aff", "#7dd4fc"];
+// Double-circle mask wipe: navy circle swallows the screen, sky circle chases it, both collapse to reveal the new page.
+const rings = [
+  { color: '#141c6e', delay: 0 },
+  { color: '#72cff6', delay: 0.09 },
+]
+const ease = [0.76, 0, 0.24, 1]
 
 export default function PageTransition({ children }) {
-  const location = useLocation();
-
   return (
-    <AnimatePresence mode="wait">
-      <motion.div key={location.pathname} style={{ position: "relative" }}>
-
-        {blocks.map((color, i) => (
-          <motion.div
-            key={i}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: color,
-              zIndex: 999 - i,
-              originX: 0,
-            }}
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: [0, 1, 1, 0] }}
-            transition={{
-              duration: 0.45,
-              delay: i * 0.05,
-              times: [0, 0.4, 0.6, 1],
-              ease: [0.76, 0, 0.24, 1],
-            }}
-          />
-        ))}
-
+    <div style={{ position: 'relative' }}>
+      {rings.map((r, i) => (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2, delay: 0.2 }}
-        >
-          {children}
-        </motion.div>
-
+          key={i}
+          aria-hidden="true"
+          style={{ position: 'fixed', inset: 0, background: r.color, zIndex: 999 - i, pointerEvents: 'none' }}
+          initial={{ clipPath: 'circle(0% at 50% 50%)' }}
+          animate={{ clipPath: ['circle(0% at 50% 50%)', 'circle(80% at 50% 50%)', 'circle(80% at 50% 50%)', 'circle(0% at 50% 50%)'] }}
+          transition={{ duration: 0.75, delay: r.delay, times: [0, 0.4, 0.55, 1], ease }}
+        />
+      ))}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2, delay: 0.32 }}>
+        {children}
       </motion.div>
-    </AnimatePresence>
-  );
+    </div>
+  )
 }
