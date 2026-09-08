@@ -17,7 +17,9 @@ export default function AboutPage() {
       <motion.div variants={item}><Rule /></motion.div>
 
       <motion.div variants={item} className="prose">
-        <p>I work on computer vision and edge AI for wildlife monitoring at the NSF ICICLE AI Institute, and on the defense side at OnRamp Hub: Ohio, where I'm designing technology transition pipelines to commercialize AFRL intellectual property and advance early-stage tech up the TRL ladder. I like problems where the model has to run on real hardware in the field — Jetsons, Pis, SDRs — not just in a notebook.</p>
+        <p>Currently pursuing a B.S. in Computer Science at The Ohio State University, with a specialization in computer systems and a minor in Robotics and Autonomous Systems. I am currently working on autonomous drones and camera traps.</p>
+        <p>At the ReRout Lab under the National Science Foundation's ICICLE grant, I design distributed edge-computing architectures for large-scale environmental monitoring. In parallel, I work at the Defense Innovation Unit helping evaluate early stage defense startups.</p>
+        <p>I'm most drawn to problems at the intersection of autonomy, perception, and real time robotics.</p>
       </motion.div>
 
       <motion.h2 variants={item} className="h2">Skills</motion.h2>

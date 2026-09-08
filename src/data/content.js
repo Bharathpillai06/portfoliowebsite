@@ -12,7 +12,7 @@ export const skills = {
   'Certifications': ['AWS Cloud Practitioner', 'Google Cloud Digital Leader', 'HuggingFace MCP Fundamentals'],
 }
 
-export const coursework = ['Data Structures & Algorithms', 'Intro to Database Systems', 'Electronics for CS', 'Linear Algebra']
+export const coursework = ['Data Structures & Algorithms', 'Database Systems', 'Electronics for CS', 'Linear Algebra']
 
 export const experience = [
   {
@@ -42,6 +42,7 @@ export const experience = [
     bullets: [
       'Implemented a SPECK128/256 cipher for an anti-jam frequency algorithm, tested against NSA vectors',
       'Developed diagrams for frequency assignment and bitsliced index computation for multi-user channel hopping',
+      'Deployed the radio achieving 10,000 hops per second at a cost under $5,000',
     ],
   },
 ]
@@ -52,7 +53,7 @@ export const publications = [
     venue: 'First author — CV4Animals Workshop, CVPR 2026',
     date: 'Jun 2026',
     bullets: [
-      'Self-validating framework combining BioCLIP 2 vision and acoustic classification, cross-checked against behavioral ecology priors to eliminate manual annotation; validated on a Milu deer herd.',
+      'Self-validating framework estimating animal depth from ground-based camera sensors using BioCLIP 2 vision and acoustic classification.',
     ],
   },
   {
@@ -71,47 +72,47 @@ export const resumeProjects = [
     stack: 'Python, YOLOv8, TensorRT, DeepSORT, MAVLink, RealSense',
     date: 'Present',
     bullets: [
-      'Designing and deploying an autonomous drone that tracks wildlife using an onboard Jetson Nano',
-      'YOLOv8 + TensorRT at 60 FPS, DeepSORT multi-target tracking, monocular depth via Intel RealSense D435i, and optical flow for velocity estimation',
-      'Perception feeds a PID control loop generating commands to a Pixhawk 6C over UART in GUIDED mode',
+      'Building an autonomous drone that tracks wildlife using an onboard Jetson Nano',
+      'Optimized a YOLOv8 + TensorRT detection pipeline to 60 FPS with DeepSORT multi-target tracking',
+      'Fused RealSense D435i depth and optical flow to estimate target range and velocity',
+      'Implemented a PID controller driving a Pixhawk 6C over UART',
     ],
   },
   {
-    name: 'BioHack — 2nd Place',
+    name: 'BioHack — 2nd Place (200 participants)',
     stack: 'Python, PyTorch, OpenCV, Blender',
     date: 'Feb 2026',
     bullets: [
-      'Created a deep learning workflow into vector embeddings for analysis across heterogeneous kidney imaging',
+      'Created a deep learning workflow for analysis across heterogeneous kidney imaging',
       'Preprocessed medical imagery with OpenCV by segmentation and masking for clear inputs for model inference',
       'Modeled kidney cortex using BPY in Blender, creating NURBS curve tubules with procedural sinusoidal winding',
       'Trained a self-supervised autoencoder in PyTorch to compress 512-d embeddings to 64-d latent space',
     ],
   },
   {
-    name: 'MakeIO — 3rd Place',
+    name: 'MakeIO — 3rd Place (500 participants)',
     stack: 'Python, YOLOv8, TensorFlow, PyTorch, Raspberry Pi',
     date: 'Mar 2026',
     bullets: [
       'Built a multimodal edge AI pipeline combining YOLOv8 detection with an audio CNN for real-time wildlife health',
       'Achieved 0% accuracy degradation vs. supercomputer server baseline at 14.9x lower energy consumption',
-      'Designed a CNN processing 24 features achieving a 36% runtime reduction on ARM vs. standard architecture',
     ],
   },
 ]
 
 export const sideProjects = [
   {
-    name: 'Autonomous wildlife tracking drone',
+    name: 'Wildlife tracking drone',
     stack: 'Python, YOLOv8, TensorRT, DeepSORT, MAVLink, Jetson Orin Nano Super, RealSense D435i',
     date: 'Present',
     color: '#7dd4fc',
     link: null,
     bullets: [
-      'GPS-denied autonomous drone that tracks wildlife in real time using onboard edge AI on an NVIDIA Jetson Orin Nano Super (67 TOPS)',
-      'Multi-stage perception pipeline: YOLOv8 + TensorRT at 60 FPS, DeepSORT multi-target tracking, monocular depth via Intel RealSense D435i, and optical flow for velocity estimation under forest canopy',
-      'Perception feeds a PID control loop generating velocity commands to a Pixhawk 6C over UART/MAVLink in GUIDED mode',
-      'Non-invasive — no GPS collars or physical contact; designed for real-world deployment on a Holybro X500 v2 airframe',
-      'Conducted at the Icicle Lab, OSU, under faculty mentor Chris Stewart; extends prior Imageomics Lab work on edge AI wildlife localization',
+      'Building a GPS-denied autonomous drone that tracks wildlife in real time using an onboard Jetson Orin Nano Super (67 TOPS), with no collars or physical contact',
+      'Optimized a YOLOv8 + TensorRT detection pipeline to 60 FPS with DeepSORT multi-target tracking',
+      'Fused RealSense D435i depth and optical flow to estimate target range and velocity under forest canopy',
+      'Implemented a PID controller driving a Pixhawk 6C over UART/MAVLink in GUIDED mode on a Holybro X500 v2 airframe',
+      'Conducted at the Icicle Lab, OSU, under faculty mentor Chris Stewart',
     ],
   },
   {
@@ -119,7 +120,7 @@ export const sideProjects = [
     stack: 'Python, Bayesian assimilation, Kriging, Synoptic Data, Sondehub',
     date: 'Spring 2026',
     color: '#a78bfa',
-    link: 'https://lnkd.in/gNkP9JaP',
+    link: null, // TODO: direct GitHub URL
     bullets: [
       'Atmospheric data fusion platform built at Buckeye Black Box; combines weather station and balloon flight data into a continuous global picture',
       'Fuses ground station data (Synoptic Data) and weather balloon flights (Sondehub) using Bayesian assimilation to reconcile discrepancies',
@@ -131,7 +132,7 @@ export const sideProjects = [
     stack: 'Python, PyTorch, OpenCV, Blender',
     date: 'Feb 2026',
     color: '#ff4d6a',
-    link: 'https://github.com/Rishivarshil/private_BioHack_2026',
+    link: 'https://github.com/Bharathpillai06/biohack',
     bullets: [
       'Deep learning pipeline for cross-modal kidney imaging analysis built at BioHack; generates vector embeddings from heterogeneous medical imagery',
       'Preprocessed medical imagery with OpenCV via segmentation and masking for clean model inputs',

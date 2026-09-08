@@ -51,7 +51,7 @@ export default function P3Menu({ onNavigate }) {
         <Monogram />
         <div>
           <div className="p3-brand__name">Bharath K. Pillai</div>
-          <div className="p3-brand__sub">CSE @ Ohio State · edge AI · SDR</div>
+          <div className="p3-brand__sub">Computer Science &amp; Engineering @ Ohio State</div>
         </div>
       </div>
 

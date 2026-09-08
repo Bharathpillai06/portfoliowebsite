@@ -16,7 +16,7 @@ export default function MobileHome() {
       <motion.div variants={item} className="kicker">Portfolio</motion.div>
       <motion.h1 variants={item} className="title">Bharath<br /><em>K. Pillai</em></motion.h1>
       <motion.p variants={item} className="sub">
-        CS &amp; engineering student at Ohio State. I build computer-vision and edge-AI systems for wildlife monitoring, and work on defense tech transition at OnRamp Hub: Ohio.
+        CS student at Ohio State working on autonomous drones and camera traps. I design edge-computing architectures for environmental monitoring at the ReRout Lab and evaluate early stage defense startups with the Defense Innovation Unit.
       </motion.p>
       <motion.div variants={item} style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 22 }}>
         <SlashButton to="/resume">Resume</SlashButton>

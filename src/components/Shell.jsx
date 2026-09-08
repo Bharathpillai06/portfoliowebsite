@@ -33,6 +33,7 @@ export default function Shell({ children, home = false }) {
         </div>
         <nav className="shell__nav" aria-label="Sections">
           {NAV.map(n => <NavLink key={n.to} to={n.to} onClick={() => track('nav_click', { to: n.to, via: 'header' })}>{n.label}</NavLink>)}
+          <a href="https://github.com/Bharathpillai06" target="_blank" rel="noreferrer" onClick={() => track('nav_click', { to: 'github', via: 'header' })}>GitHub</a>
         </nav>
       </header>
 

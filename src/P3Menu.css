@@ -17,7 +17,7 @@
 }
 .p3-brand.mounted { opacity: 1; transform: none; }
 .p3-brand__name { font-family: var(--cond); font-weight: 700; font-size: 17px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--paper); line-height: 1.1; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
-.p3-brand__sub  { font-family: var(--cond); font-weight: 500; font-size: 13px; letter-spacing: 1px; color: rgba(244,248,255,.7); text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+.p3-brand__sub  { white-space: nowrap; font-family: var(--cond); font-weight: 500; font-size: 13px; letter-spacing: 1px; color: rgba(244,248,255,.7); text-shadow: 0 1px 8px rgba(0,0,0,.5); }
 
 .p3-menu {
   position: relative; z-index: 20;
