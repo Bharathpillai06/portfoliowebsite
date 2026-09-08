@@ -18,3 +18,5 @@ Phones and tablets get a plain scrolling portfolio (`src/MobileHome.jsx`); lapto
 - `src/components/Decor.jsx` – halftone/slash backdrop, chips, monogram, icons
 - `src/data/content.js` – all copy in one place; edit this to update the site
 - `src/index.css` – design tokens and shared styles
+
+Favicon: jellyfish emoji from [Twemoji](https://github.com/jdecked/twemoji), CC-BY 4.0.
