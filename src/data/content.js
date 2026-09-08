@@ -12,7 +12,20 @@ export const skills = {
   'Certifications': ['AWS Cloud Practitioner', 'Google Cloud Digital Leader', 'HuggingFace MCP Fundamentals'],
 }
 
-export const coursework = ['Data Structures & Algorithms', 'Database Systems', 'Electronics for CS', 'Linear Algebra']
+export const coursework = [
+  'Data Structures & Algorithms',
+  'Software Development & Design',
+  'Operating Systems',
+  'Database Systems',
+  'Systems Software Project',
+  'Unmanned Aircraft Systems',
+  'Artificial Intelligence',
+  'Programming in Python',
+  'Electronics for CSE',
+  'Linear Algebra',
+  'Probability & Statistics',
+  'Foundations of Higher Mathematics',
+]
 
 export const experience = [
   {
@@ -108,10 +121,10 @@ export const sideProjects = [
     color: '#7dd4fc',
     link: null,
     bullets: [
-      'Building a GPS-denied autonomous drone that tracks wildlife in real time using an onboard Jetson Orin Nano Super (67 TOPS), with no collars or physical contact',
+      'Building a GPS-denied autonomous drone that tracks wildlife in real time using an onboard Jetson Orin Nano Super (67 TOPS)',
       'Optimized a YOLOv8 + TensorRT detection pipeline to 60 FPS with DeepSORT multi-target tracking',
-      'Fused RealSense D435i depth and optical flow to estimate target range and velocity under forest canopy',
-      'Implemented a PID controller driving a Pixhawk 6C over UART/MAVLink in GUIDED mode on a Holybro X500 v2 airframe',
+      'Fused RealSense D435i depth and optical flow to estimate target range and velocity',
+      'Implemented a PID controller driving a Pixhawk 6C over UART/MAVLink in GUIDED mode',
       'Conducted at the Icicle Lab, OSU, under faculty mentor Chris Stewart',
     ],
   },
@@ -120,7 +133,7 @@ export const sideProjects = [
     stack: 'Python, Bayesian assimilation, Kriging, Synoptic Data, Sondehub',
     date: 'Spring 2026',
     color: '#a78bfa',
-    link: null, // TODO: direct GitHub URL
+    link: 'https://github.com/Bharathpillai06/stratosense',
     bullets: [
       'Atmospheric data fusion platform built at Buckeye Black Box; combines weather station and balloon flight data into a continuous global picture',
       'Fuses ground station data (Synoptic Data) and weather balloon flights (Sondehub) using Bayesian assimilation to reconcile discrepancies',
