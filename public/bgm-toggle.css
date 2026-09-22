@@ -1,0 +1,14 @@
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* background music toggle */
+.bgm-toggle {
+  position: fixed; top: calc(14px + env(safe-area-inset-top, 0px)); right: 16px; z-index: 1000;
+  background: #0a0a14; color: #fff; border: 2px solid #fff;
+  padding: 6px 14px; transform: skewX(-12deg); cursor: pointer;
+  font: italic 700 14px/1 'Anton', Impact, sans-serif; letter-spacing: 0.06em;
+  opacity: 0.75; transition: opacity .15s, background .15s, color .15s;
+}
+.bgm-toggle > span { display: inline-block; transform: skewX(12deg); }
+.bgm-toggle:hover, .bgm-toggle:focus-visible { opacity: 1; }
+.bgm-toggle.on { background: #fff; color: #0a0a14; }
