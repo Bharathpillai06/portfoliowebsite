@@ -11,6 +11,7 @@ import ProjectsPage from './ProjectsPage'
 import MobileHome from './MobileHome'
 import useIsMobile from './hooks/useIsMobile'
 import { track } from './lib/analytics'
+import BgMusic from './components/BgMusic'
 
 function MenuScreen() {
   const navigate = useNavigate()
@@ -40,6 +41,8 @@ export default function App() {
   const Home = mobile ? MobileHome : MenuScreen
   useEffect(() => { track('page_view', { path: location.pathname, layout: mobile ? 'mobile' : 'desktop' }) }, [location.pathname, mobile])
   return (
+    <>
+    <BgMusic />
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/"         element={<PageTransition><Home /></PageTransition>} />
@@ -50,5 +53,6 @@ export default function App() {
         <Route path="*"         element={<PageTransition><Home /></PageTransition>} />
       </Routes>
     </AnimatePresence>
+    </>
   )
 }
