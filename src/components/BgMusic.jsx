@@ -10,7 +10,7 @@ const readMuted = () => { try { return localStorage.getItem(KEY) === '1' } catch
 // otherwise starts on the visitor's first click/tap/keypress.
 export default function BgMusic() {
   const ref = useRef(null)
-  const [muted, setMuted] = useState(readMuted)
+  const [muted] = useState(readMuted)
   const [playing, setPlaying] = useState(false)
 
   const play = () => ref.current?.play().then(() => setPlaying(true)).catch(() => {})
@@ -38,26 +38,5 @@ export default function BgMusic() {
     return () => document.removeEventListener('visibilitychange', onVis)
   }, [muted, playing])
 
-  const toggle = () => {
-    const next = !muted
-    setMuted(next)
-    try { localStorage.setItem(KEY, next ? '1' : '0') } catch { /* private mode */ }
-    if (next) { ref.current?.pause(); setPlaying(false) } else play()
-  }
-
-  const on = playing && !muted
-  return (
-    <>
-      <audio ref={ref} src={SRC} loop preload="auto" />
-      <button
-        type="button"
-        className={`bgm-toggle ${on ? 'on' : ''}`}
-        onClick={toggle}
-        aria-label={on ? 'Mute music' : 'Play music'}
-        aria-pressed={on}
-      >
-        <span>{on ? '♪ BGM ON' : '♪ BGM OFF'}</span>
-      </button>
-    </>
-  )
+  return <audio ref={ref} src={SRC} loop preload="auto" />
 }

@@ -29,7 +29,7 @@ function MenuScreen() {
 
   return (
     <div id="menu-screen">
-      <video src={menuVideo} autoPlay loop muted playsInline preload="auto" />
+      <video src={menuVideo} autoPlay loop muted playsInline preload="auto" disablePictureInPicture />
       <P3Menu onNavigate={handleNavigate} />
     </div>
   )
