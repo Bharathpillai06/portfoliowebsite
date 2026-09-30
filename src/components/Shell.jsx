@@ -11,7 +11,7 @@ import { track } from '../lib/analytics'
 const TAB_ICON = { '/about': Icons.about, '/resume': Icons.resume, '/sideproj': Icons.projects, '/socials': Icons.socials }
 
 
-export default function Shell({ children, home = false }) {
+export default function Shell({ children, home = false, className = '' }) {
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Shell({ children, home = false }) {
   }, [navigate])
 
   return (
-    <div className="shell">
+    <div className={`shell ${className}`}>
       <div className="shell__topbar" /><div className="shell__edge-l" /><div className="shell__edge-r" /><div className="shell__edge-r2" />
       <Backdrop />
 

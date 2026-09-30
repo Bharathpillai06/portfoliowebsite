@@ -263,3 +263,67 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* ---------- socials: velvet room compendium layout ---------- */
+.shell--velvet { background: #01082a; overflow: hidden; }
+.shell--velvet .slash-bg, .shell--velvet .halftone { display: none; }
+.shell--velvet .shell__head { background: linear-gradient(180deg, rgba(1,8,42,.85) 50%, rgba(1,8,42,0)); }
+
+.velvet { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  background: radial-gradient(ellipse at 40% 45%, #0b47d4 0%, #06298f 40%, #021150 75%, #01061f 100%); }
+.velvet__quilt { position: absolute; inset: -10% 35% 30% -10%; opacity: .55;
+  background:
+    radial-gradient(circle, rgba(0,0,20,.8) 2px, transparent 3px) 0 0 / 46px 46px,
+    repeating-linear-gradient(45deg, transparent 0 31px, rgba(0,5,40,.55) 31px 33px),
+    repeating-linear-gradient(-45deg, transparent 0 31px, rgba(0,5,40,.55) 31px 33px),
+    radial-gradient(circle at 50% 50%, rgba(80,140,255,.35), transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 30% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse at 30% 30%, #000 30%, transparent 75%); }
+.velvet__floor { position: absolute; left: -30%; right: -30%; top: 5%; bottom: -60%;
+  transform: perspective(1400px) rotateX(38deg) rotateZ(-22deg);
+  background:
+    linear-gradient(90deg, rgba(0,0,10,.9) 3px, transparent 3px) 0 0 / 210px 210px,
+    linear-gradient(0deg, rgba(0,0,10,.9) 3px, transparent 3px) 0 0 / 210px 210px,
+    conic-gradient(rgba(20,90,255,.55) 25%, rgba(4,30,130,.5) 0 50%, rgba(20,90,255,.55) 0 75%, rgba(4,30,130,.5) 0) 0 0 / 420px 420px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 5%, #000 35%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent 5%, #000 35%, #000 80%, transparent);
+  animation: velvet-drift 30s linear infinite; }
+@keyframes velvet-drift { to { background-position: 210px 210px, 210px 210px, 420px 420px; } }
+.velvet__water { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; opacity: .45; color: #6fd8ff; }
+.velvet__water rect { fill: #6fd8ff; }
+.velvet__vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 45% 50%, transparent 45%, rgba(0,3,20,.85) 100%); }
+
+.velvet__ask { position: relative; z-index: 2; margin: 6px 0 0 -2px; display: inline-block; padding: 0 60px 8px 0;
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(28px, 4.2vw, 44px); letter-spacing: .5px;
+  color: #fff; text-shadow: 0 2px 12px rgba(0,0,30,.6); transform: rotate(-3deg); transform-origin: left; }
+.velvet__ask::after { content: ""; position: absolute; left: -40vw; right: 0; bottom: 0; height: 3px; background: #fff; }
+
+.vstage { position: relative; z-index: 2; height: min(600px, calc(100dvh - 190px)); min-height: 460px; margin-top: 10px; }
+.vcard { position: absolute; display: block; text-decoration: none; color: #fff; outline: none;
+  padding: 10px; background: #0a2a9c; box-shadow: 0 18px 40px rgba(0,0,30,.6), 0 0 0 1px rgba(255,255,255,.08);
+  transition: background .18s, color .18s, box-shadow .18s; cursor: pointer; }
+.vcard__frame { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  padding: 22px 26px 18px; border: 3px solid currentColor; outline: 1px solid currentColor; outline-offset: -8px; text-align: center; }
+/* ornamental corners */
+.vcard__frame::before, .vcard__frame::after { content: ""; position: absolute; width: 16px; height: 16px; border: 2px solid currentColor; }
+.vcard__frame::before { left: 6px; top: 6px; border-right: 0; border-bottom: 0; box-shadow: calc(100% + 0px) 0 0 0 transparent; }
+.vcard__frame::after { right: 6px; bottom: 6px; border-left: 0; border-top: 0; }
+.vcard__title { font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: 1; letter-spacing: .5px; }
+.vcard__sub { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; letter-spacing: .3px; opacity: .9; overflow-wrap: anywhere; }
+.vcard--0 .vcard__title { font-size: 40px; }
+.vcard--1 .vcard__title { font-size: 52px; }
+.vcard--2 .vcard__title { font-size: 64px; }
+.vcard--2 .vcard__sub { font-size: 17px; }
+.vcard:hover, .vcard:focus-visible { background: linear-gradient(135deg, #7ff3ff, #2fc8e6); color: #062a8a; z-index: 3;
+  box-shadow: 0 24px 50px rgba(0,0,30,.7), 0 0 30px rgba(127,243,255,.55); }
+
+.velvet__keys { position: fixed; left: 26px; bottom: 20px; z-index: 5; display: flex; align-items: center; gap: 6px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 18px; color: #fff; }
+.velvet__keys kbd { font: 600 11px var(--cond); font-style: normal; min-width: 22px; padding: 2px 6px; border-radius: 11px; background: #fff; color: #06298f; text-align: center; margin-left: 10px; }
+
+@media (max-width: 720px) {
+  .vstage { height: auto; min-height: 0; display: flex; flex-direction: column; gap: 26px; padding: 20px 6px 30px; }
+  .vcard { position: relative; left: auto !important; top: auto !important; width: 100% !important; }
+  .vcard--0 .vcard__title, .vcard--1 .vcard__title, .vcard--2 .vcard__title { font-size: 40px; }
+  .velvet__keys { display: none; }
+  .velvet__floor { transform: perspective(900px) rotateX(35deg) rotateZ(-22deg) scale(.7); }
+}
+@media (prefers-reduced-motion: reduce) { .velvet__floor { animation: none; } }
