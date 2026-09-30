@@ -264,66 +264,60 @@ ul { list-style: none; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
-/* ---------- socials: velvet room compendium layout ---------- */
-.shell--velvet { background: #01082a; overflow: hidden; }
+/* ---------- socials: Velvet Room compendium screenshot + overlaid cards ---------- */
+.shell--velvet { background: #01061f; overflow: hidden; }
 .shell--velvet .slash-bg, .shell--velvet .halftone { display: none; }
-.shell--velvet .shell__head { background: linear-gradient(180deg, rgba(1,8,42,.85) 50%, rgba(1,8,42,0)); }
+.shell--velvet .shell__head { background: linear-gradient(180deg, rgba(0,2,14,.8) 40%, rgba(0,2,14,0)); }
 
-.velvet { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-  background: radial-gradient(ellipse at 40% 45%, #0b47d4 0%, #06298f 40%, #021150 75%, #01061f 100%); }
-.velvet__quilt { position: absolute; inset: -10% 35% 30% -10%; opacity: .55;
+/* 16:9 stage that covers the viewport, so % positions line up with the image */
+.vroom { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.vroom__stage { position: absolute; left: 50%; top: 50%; width: max(100vw, 177.78vh); aspect-ratio: 16 / 9; transform: translate(-50%, -50%); container-type: inline-size; }
+.vroom__stage img { width: 100%; height: 100%; display: block; }
+/* hide the screenshot's HUD: question (top-left), date/Dark Hour (top-right), button prompts (bottom-left) */
+.vroom > .vroom__stage::after { content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(circle, rgba(0,0,20,.8) 2px, transparent 3px) 0 0 / 46px 46px,
-    repeating-linear-gradient(45deg, transparent 0 31px, rgba(0,5,40,.55) 31px 33px),
-    repeating-linear-gradient(-45deg, transparent 0 31px, rgba(0,5,40,.55) 31px 33px),
-    radial-gradient(circle at 50% 50%, rgba(80,140,255,.35), transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at 30% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse at 30% 30%, #000 30%, transparent 75%); }
-.velvet__floor { position: absolute; left: -30%; right: -30%; top: 5%; bottom: -60%;
-  transform: perspective(1400px) rotateX(38deg) rotateZ(-22deg);
-  background:
-    linear-gradient(90deg, rgba(0,0,10,.9) 3px, transparent 3px) 0 0 / 210px 210px,
-    linear-gradient(0deg, rgba(0,0,10,.9) 3px, transparent 3px) 0 0 / 210px 210px,
-    conic-gradient(rgba(20,90,255,.55) 25%, rgba(4,30,130,.5) 0 50%, rgba(20,90,255,.55) 0 75%, rgba(4,30,130,.5) 0) 0 0 / 420px 420px;
-  -webkit-mask-image: linear-gradient(90deg, transparent 5%, #000 35%, #000 80%, transparent); mask-image: linear-gradient(90deg, transparent 5%, #000 35%, #000 80%, transparent);
-  animation: velvet-drift 30s linear infinite; }
-@keyframes velvet-drift { to { background-position: 210px 210px, 210px 210px, 420px 420px; } }
-.velvet__water { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; opacity: .45; color: #6fd8ff; }
-.velvet__water rect { fill: #6fd8ff; }
-.velvet__vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 45% 50%, transparent 45%, rgba(0,3,20,.85) 100%); }
+    radial-gradient(ellipse 52% 32% at 0 0, #00020e 84%, transparent 100%),
+    radial-gradient(ellipse 46% 30% at 100% 0, #00020e 84%, transparent 100%),
+    radial-gradient(ellipse 30% 20% at 0 100%, #00020e 80%, transparent 100%); }
+.vroom--cards { z-index: 3; }
+.vroom--cards .vroom__stage::after { display: none; }
 
-.velvet__ask { position: relative; z-index: 2; margin: 6px 0 0 -2px; display: inline-block; padding: 0 60px 8px 0;
-  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(28px, 4.2vw, 44px); letter-spacing: .5px;
-  color: #fff; text-shadow: 0 2px 12px rgba(0,0,30,.6); transform: rotate(-3deg); transform-origin: left; }
+.velvet__ask { position: relative; z-index: 4; margin: 4px 0 0 -2px; display: inline-block; padding: 0 60px 8px 0;
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(28px, 3.4vw, 50px); letter-spacing: .5px;
+  color: #fff; text-shadow: 0 2px 12px rgba(0,0,30,.6); transform: rotate(-4deg); transform-origin: left; }
 .velvet__ask::after { content: ""; position: absolute; left: -40vw; right: 0; bottom: 0; height: 3px; background: #fff; }
 
-.vstage { position: relative; z-index: 2; height: min(600px, calc(100dvh - 190px)); min-height: 460px; margin-top: 10px; }
-.vcard { position: absolute; display: block; text-decoration: none; color: #fff; outline: none;
-  padding: 10px; background: #0a2a9c; box-shadow: 0 18px 40px rgba(0,0,30,.6), 0 0 0 1px rgba(255,255,255,.08);
-  transition: background .18s, color .18s, box-shadow .18s; cursor: pointer; }
-.vcard__frame { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-  padding: 22px 26px 18px; border: 3px solid currentColor; outline: 1px solid currentColor; outline-offset: -8px; text-align: center; }
-/* ornamental corners */
-.vcard__frame::before, .vcard__frame::after { content: ""; position: absolute; width: 16px; height: 16px; border: 2px solid currentColor; }
-.vcard__frame::before { left: 6px; top: 6px; border-right: 0; border-bottom: 0; box-shadow: calc(100% + 0px) 0 0 0 transparent; }
-.vcard__frame::after { right: 6px; bottom: 6px; border-left: 0; border-top: 0; }
-.vcard__title { font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: 1; letter-spacing: .5px; }
-.vcard__sub { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; letter-spacing: .3px; opacity: .9; overflow-wrap: anywhere; }
-.vcard--0 .vcard__title { font-size: 40px; }
-.vcard--1 .vcard__title { font-size: 52px; }
-.vcard--2 .vcard__title { font-size: 64px; }
-.vcard--2 .vcard__sub { font-size: 17px; }
-.vcard:hover, .vcard:focus-visible { background: linear-gradient(135deg, #7ff3ff, #2fc8e6); color: #062a8a; z-index: 3;
-  box-shadow: 0 24px 50px rgba(0,0,30,.7), 0 0 30px rgba(127,243,255,.55); }
+/* cards: ornate double border like the compendium cards */
+.vcard { position: absolute; display: block; text-decoration: none; color: #fff; outline: none; pointer-events: auto; cursor: pointer; }
+.vcard__float { display: block; width: 100%; height: 100%; padding: .55cqw; background: #1b47c9;
+  box-shadow: 0 1.2cqw 2.4cqw rgba(0,0,30,.55); transition: background .18s, box-shadow .18s, color .18s;
+  animation: vcard-bob 3.2s ease-in-out infinite; }
+@keyframes vcard-bob { 50% { transform: translateY(-.45cqw); } }
+.vcard__frame { position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .1em;
+  border: .22cqw solid currentColor; outline: .07cqw solid currentColor; outline-offset: -.5cqw; text-align: center; padding: 0 1cqw; }
+.vcard__frame::before, .vcard__frame::after { content: ""; position: absolute; width: 1.1cqw; height: 1.1cqw; border: .14cqw solid currentColor; }
+.vcard__frame::before { left: .35cqw; top: .35cqw; border-right: 0; border-bottom: 0; }
+.vcard__frame::after { right: .35cqw; bottom: .35cqw; border-left: 0; border-top: 0; }
+.vcard__title { font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: 1; letter-spacing: .02em; }
+.vcard__sub { font-family: 'Cormorant Garamond', serif; font-weight: 600; opacity: .92; overflow-wrap: anywhere; line-height: 1.1; }
+.vcard--0 .vcard__title { font-size: 3.1cqw; } .vcard--0 .vcard__sub { font-size: .95cqw; }
+.vcard--1 .vcard__title { font-size: 4.2cqw; } .vcard--1 .vcard__sub { font-size: 1.1cqw; }
+.vcard--2 .vcard__title { font-size: 5.6cqw; } .vcard--2 .vcard__sub { font-size: 1.4cqw; }
+.vcard:hover .vcard__float, .vcard:focus-visible .vcard__float { background: linear-gradient(135deg, #8ff6ff, #34d0ec); color: #0a2a9c;
+  box-shadow: 0 1.6cqw 3cqw rgba(0,0,30,.65), 0 0 2.4cqw rgba(143,246,255,.6); }
 
-.velvet__keys { position: fixed; left: 26px; bottom: 20px; z-index: 5; display: flex; align-items: center; gap: 6px;
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 18px; color: #fff; }
-.velvet__keys kbd { font: 600 11px var(--cond); font-style: normal; min-width: 22px; padding: 2px 6px; border-radius: 11px; background: #fff; color: #06298f; text-align: center; margin-left: 10px; }
-
+/* phones: screenshot as a dimmed backdrop cropped to the right side, cards stacked */
 @media (max-width: 720px) {
-  .vstage { height: auto; min-height: 0; display: flex; flex-direction: column; gap: 26px; padding: 20px 6px 30px; }
-  .vcard { position: relative; left: auto !important; top: auto !important; width: 100% !important; }
-  .vcard--0 .vcard__title, .vcard--1 .vcard__title, .vcard--2 .vcard__title { font-size: 40px; }
-  .velvet__keys { display: none; }
-  .velvet__floor { transform: perspective(900px) rotateX(35deg) rotateZ(-22deg) scale(.7); }
+  .vroom > .vroom__stage { left: -12%; }
+  .vroom::after { content: ""; position: absolute; inset: 0; background: rgba(0,4,30,.55); }
+  .vlist { position: relative; z-index: 3; display: flex; flex-direction: column; gap: 22px; padding: 26px 6px 30px; container-type: inline-size; }
+  .vlist .vcard { position: relative; height: 128px; }
+  .vlist .vcard__float { padding: 7px; }
+  .vlist .vcard__frame { border-width: 3px; outline-width: 1px; outline-offset: -8px; }
+  .vlist .vcard__frame::before, .vlist .vcard__frame::after { width: 14px; height: 14px; border-width: 2px; left: 6px; top: 6px; }
+  .vlist .vcard__frame::after { left: auto; top: auto; right: 6px; bottom: 6px; }
+  .vlist .vcard__title { font-size: 40px !important; }
+  .vlist .vcard__sub { font-size: 15px !important; }
+  @keyframes vcard-bob { 50% { transform: translateY(-4px); } }
 }
-@media (prefers-reduced-motion: reduce) { .velvet__floor { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .vcard__float { animation: none; } }
