@@ -7,7 +7,7 @@ import { sideProjects } from './data/content'
 
 export default function ProjectsPage() {
   return (
-    <Shell>
+    <Shell bg="/bg-projects.mp4">
       <motion.div variants={item} className="kicker">Projects</motion.div>
       <motion.h1 variants={item} className="title">Side<br /><em>projects</em></motion.h1>
       <motion.p variants={item} className="sub">Hackathon builds and the drone I'm putting together at the Icicle Lab.</motion.p>
