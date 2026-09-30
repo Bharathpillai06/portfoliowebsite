@@ -7,7 +7,7 @@ import { skills, coursework } from './data/content'
 
 export default function AboutPage() {
   return (
-    <Shell>
+    <Shell bg="/bg-about.mp4">
       <motion.div variants={item} className="kicker">About</motion.div>
       <motion.h1 variants={item} className="title">Bharath<br /><em>K. Pillai</em></motion.h1>
       <motion.p variants={item} className="sub">

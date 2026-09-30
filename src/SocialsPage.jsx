@@ -53,9 +53,7 @@ export default function SocialsPage() {
         <div className="vroom__shade" />
       </div>
 
-      <motion.h1 className="velvet__ask" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.4 }}>
-        Do you wish to contact?
-      </motion.h1>
+      <h1 className="sr-only">Contact</h1>
 
       {mobile ? (
         <div className="vlist">{CARDS.map((c, i) => <Card key={c.id} c={c} i={i} mobile />)}</div>
