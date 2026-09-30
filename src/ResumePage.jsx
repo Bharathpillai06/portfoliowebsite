@@ -20,7 +20,7 @@ function Block({ it }) {
 
 export default function ResumePage() {
   return (
-    <Shell>
+    <Shell bg="/bg-resume.mp4">
       <motion.div variants={item} className="kicker">Resume</motion.div>
       <motion.h1 variants={item} className="title">Experience<br /><em>&amp; work</em></motion.h1>
       <motion.p variants={item} className="sub"><strong>Bharath K. Pillai</strong> · OSU CSE, Class of 2028</motion.p>

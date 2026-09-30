@@ -11,7 +11,7 @@ import { track } from '../lib/analytics'
 const TAB_ICON = { '/about': Icons.about, '/resume': Icons.resume, '/sideproj': Icons.projects, '/socials': Icons.socials }
 
 
-export default function Shell({ children, home = false }) {
+export default function Shell({ children, home = false, className = '', bg }) {
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -22,9 +22,14 @@ export default function Shell({ children, home = false }) {
   }, [navigate])
 
   return (
-    <div className="shell">
+    <div className={`shell ${className}${bg ? ' shell--video' : ''}`}>
       <div className="shell__topbar" /><div className="shell__edge-l" /><div className="shell__edge-r" /><div className="shell__edge-r2" />
       <Backdrop />
+      {bg && (
+        <div className="shell__video" aria-hidden="true">
+          <video src={bg} autoPlay loop muted playsInline preload="auto" disablePictureInPicture />
+        </div>
+      )}
 
       <header className="shell__head">
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
