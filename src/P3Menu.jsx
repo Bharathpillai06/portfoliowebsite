@@ -18,7 +18,9 @@ export default function P3Menu({ onNavigate }) {
   const [leaving, setLeaving] = useState(null)
   const touch = useRef(false)
 
-  const activate = (i) => { if (i !== active) sfx.move(); setActive(i); setAnimKey(k => k + 1) }
+  // no-op when already active: re-keying the label spans mid-click (mousedown → focus)
+  // detaches the element under the cursor and the browser drops the click
+  const activate = (i) => { if (i === active) return; sfx.move(); setActive(i); setAnimKey(k => k + 1) }
 
   const go = (i) => {
     // flash the selection, then leave — lets the tap animation land on touch screens

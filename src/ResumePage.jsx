@@ -36,7 +36,7 @@ export default function ResumePage() {
       <motion.h2 variants={item} className="h2">Publications</motion.h2>
       {publications.map((p, i) => <Block key={i} it={p} />)}
 
-      <motion.h2 variants={item} className="h2">Selected projects</motion.h2>
+      <motion.h2 variants={item} className="h2">Projects</motion.h2>
       {resumeProjects.map((p, i) => <Block key={i} it={p} />)}
 
       <motion.div variants={item} style={{ marginTop: 28 }}>

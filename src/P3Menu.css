@@ -47,6 +47,7 @@
 .p3-skew {
   position: relative; display: block; isolation: isolate;
   transform: skewX(var(--skew)) skewY(var(--skewY));
+  pointer-events: none; /* clicks always target the <button>, never the re-keyed spans inside */
 }
 
 /* both panels size themselves from the label, no JS measuring */
@@ -107,7 +108,7 @@
 }
 .p3-row.active .p3-label__dark { text-shadow: none; }
 .p3-row.active .p3-label__dark { color: #6b0010; }
-.p3-row:hover:not(.active) .p3-label__dark { color: #00d9ff; }
+@media (hover: hover) { .p3-row:hover:not(.active) .p3-label__dark { color: #00d9ff; } }
 .p3-label__bright {
   color: #ff2a2a; position: absolute; inset: 0; opacity: 0; transition: opacity .12s ease;
   clip-path: polygon(-14% 0, 114% 50%, -14% 100%);

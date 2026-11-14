@@ -29,16 +29,6 @@ export const coursework = [
 
 export const experience = [
   {
-    org: 'OnRamp Hub: Ohio · Defense Innovation Unit (DIU) program',
-    role: 'Subject Matter Expert Intern',
-    date: 'May 2026 – Present',
-    bullets: [
-      'Designing technology transition pipelines that accelerate the commercialization of AFRL intellectual property',
-      'Evaluating early-stage technologies and developing strategies to advance Technology Readiness Levels (TRL)',
-      'Creating technical capability summaries for DoW partners and maintaining a database of companies and R&D trends',
-    ],
-  },
-  {
     org: 'NSF ICICLE AI Institute',
     role: 'Undergraduate Researcher — Computer Vision & Edge Systems',
     date: 'May 2025 – Present',
@@ -56,6 +46,16 @@ export const experience = [
       'Implemented a SPECK128/256 cipher for an anti-jam frequency algorithm, tested against NSA vectors',
       'Developed diagrams for frequency assignment and bitsliced index computation for multi-user channel hopping',
       'Deployed the radio achieving 10,000 hops per second at a cost under $5,000',
+    ],
+  },
+  {
+    org: 'Defense Innovation Unit OnRamp Hub: Ohio',
+    role: 'Subject Matter Expert Intern',
+    date: 'May 2026 – Present',
+    bullets: [
+      'Evaluating dual-use startups for DoW mission partners, assessing technical readiness, strengths, and limitations',
+      'Bridging government partners and commercial innovators to align dual-use technology with defense needs',
+      'Maintaining a database of emerging critical tech companies and R&D trends to support innovation programming',
     ],
   },
 ]
@@ -81,14 +81,14 @@ export const publications = [
 
 export const resumeProjects = [
   {
-    name: 'Wildlife Tracking Drone',
-    stack: 'Python, YOLOv8, TensorRT, DeepSORT, MAVLink, RealSense',
-    date: 'Present',
+    name: 'Twinfield: Drone Digital Twin Simulator',
+    stack: 'Python, PyTorch, COLMAP, NumPy',
+    date: 'Oct 2026',
     bullets: [
-      'Building an autonomous drone that tracks wildlife using an onboard Jetson Nano',
-      'Optimized a YOLOv8 + TensorRT detection pipeline to 60 FPS with DeepSORT multi-target tracking',
-      'Fused RealSense D435i depth and optical flow to estimate target range and velocity',
-      'Implemented a PID controller driving a Pixhawk 6C over UART',
+      'Built a drone mission simulator on Twinflie that rebuilds a field as a 3D Gaussian splat from drone video',
+      'Scaled scenes from ANAFI GPS in MP4 metadata, fitting the camera path to GPS with 0.67 m median error',
+      'Modeled a 6-DOF drone with velocity, attitude, and autopilot modes, replaying a real flight at 0.23 m mean error',
+      'Generated missions in the sim that export as Olympe scripts to fly on a real Parrot ANAFI',
     ],
   },
   {
@@ -104,7 +104,7 @@ export const resumeProjects = [
   },
   {
     name: 'MakeIO — 3rd Place (500 participants)',
-    stack: 'Python, YOLOv8, TensorFlow, PyTorch, Raspberry Pi',
+    stack: 'Python, YOLOv8, TensorFlow, PyTorch',
     date: 'Mar 2026',
     bullets: [
       'Built a multimodal edge AI pipeline combining YOLOv8 detection with an audio CNN for real-time wildlife health',
@@ -115,17 +115,16 @@ export const resumeProjects = [
 
 export const sideProjects = [
   {
-    name: 'Wildlife tracking drone',
-    stack: 'Python, YOLOv8, TensorRT, DeepSORT, MAVLink, Jetson Orin Nano Super, RealSense D435i',
-    date: 'Present',
+    name: 'Twinfield — drone digital twin',
+    stack: 'Python, PyTorch, COLMAP, NumPy, 3D Gaussian Splatting, Olympe',
+    date: 'Oct 2026',
     color: '#7dd4fc',
     link: null,
     bullets: [
-      'Building a GPS-denied autonomous drone that tracks wildlife in real time using an onboard Jetson Orin Nano Super (67 TOPS)',
-      'Optimized a YOLOv8 + TensorRT detection pipeline to 60 FPS with DeepSORT multi-target tracking',
-      'Fused RealSense D435i depth and optical flow to estimate target range and velocity',
-      'Implemented a PID controller driving a Pixhawk 6C over UART/MAVLink in GUIDED mode',
-      'Conducted at the Icicle Lab, OSU, under faculty mentor Chris Stewart',
+      'Drone mission simulator built on Twinflie that rebuilds a field as a 3D Gaussian splat from drone video',
+      'Scaled scenes from ANAFI GPS in MP4 metadata, fitting the camera path to GPS with 0.67 m median error',
+      'Modeled a 6-DOF drone with velocity, attitude, and autopilot modes, replaying a real flight at 0.23 m mean error',
+      'Missions planned in the sim export as Olympe scripts that fly on a real Parrot ANAFI',
     ],
   },
   {
