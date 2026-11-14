@@ -336,3 +336,8 @@ ul { list-style: none; }
   .shell__video::after { background: rgba(3,8,30,.72); }
 }
 @media (prefers-reduced-motion: reduce) { .shell__video video { animation: none; } }
+/* iOS draws a big play button over videos it hasn't started yet — hide it on background videos */
+.shell__video video::-webkit-media-controls,
+.shell__video video::-webkit-media-controls-start-playback-button,
+#menu-screen video::-webkit-media-controls,
+#menu-screen video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }

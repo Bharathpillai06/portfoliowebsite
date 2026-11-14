@@ -5,6 +5,7 @@ import { NAV } from '../data/content'
 import { Backdrop, Monogram } from './Decor'
 import { Icons } from './icons'
 import SlashButton from './SlashButton'
+import BgVideo from './BgVideo'
 import { reveal } from './motion'
 import { track } from '../lib/analytics'
 
@@ -27,7 +28,7 @@ export default function Shell({ children, home = false, className = '', bg }) {
       <Backdrop />
       {bg && (
         <div className="shell__video" aria-hidden="true">
-          <video src={bg} autoPlay loop muted playsInline preload="auto" disablePictureInPicture />
+          <BgVideo src={bg} />
         </div>
       )}
 

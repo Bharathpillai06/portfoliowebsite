@@ -12,6 +12,7 @@ import MobileHome from './MobileHome'
 import useIsMobile from './hooks/useIsMobile'
 import { track } from './lib/analytics'
 import BgMusic from './components/BgMusic'
+import BgVideo from './components/BgVideo'
 
 function MenuScreen() {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ function MenuScreen() {
 
   return (
     <div id="menu-screen">
-      <video src={menuVideo} autoPlay loop muted playsInline preload="auto" disablePictureInPicture />
+      <BgVideo src={menuVideo} />
       <P3Menu onNavigate={handleNavigate} />
     </div>
   )
